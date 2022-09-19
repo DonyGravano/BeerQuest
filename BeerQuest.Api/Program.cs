@@ -1,5 +1,6 @@
 using BeerQuest.Application;
 using BeerQuest.CoreDataProvider;
+using BeerQuest.Models.GraphQL;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddApplicationServices();
 builder.Services.AddCoreDataProviders(config);
 
+builder.Services
+    .AddGraphQLServer()
+    .AddQueryType<PubReviewQuery>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -24,6 +29,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.MapGraphQL();
 
 app.UseHttpsRedirection();
 
