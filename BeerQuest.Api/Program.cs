@@ -1,11 +1,20 @@
+using BeerQuest.Application;
+using BeerQuest.CoreDataProvider;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+var config = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json").Build();
 
+// Add services to the container.
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddApplicationServices();
+builder.Services.AddCoreDataProviders(config);
 
 var app = builder.Build();
 

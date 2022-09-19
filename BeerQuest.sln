@@ -12,15 +12,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerQuest.Api.UnitTests", "BeerQuest.Api.UnitTests\BeerQuest.Api.UnitTests.csproj", "{ED1AE171-9409-4A1A-90D5-93906D8245F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerQuest.CoreDataProvider", "BeerQuest.CoreDataProvider\BeerQuest.CoreDataProvider.csproj", "{CF4DC2E0-C8BF-43DC-9789-B8BBF536F5F0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerQuest.CoreDataProvider.UnitTests", "BeerQuest.CoreDataProvider.UnitTests\BeerQuest.CoreDataProvider.UnitTests.csproj", "{3959E311-9B4D-45B0-A85A-73EF8334AC27}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerQuest.Models", "BeerQuest.Models\BeerQuest.Models.csproj", "{D66B6036-C95E-4B5C-BB1F-0162B94024B6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerQuest.Application", "BeerQuest.Application\BeerQuest.Application.csproj", "{C16292AB-D1F9-441B-8B03-EFDC96856B97}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerQuest.Application.UnitTests", "BeerQuest.Application.UnitTests\BeerQuest.Application.UnitTests.csproj", "{E344E9B9-A7C3-4942-AB0C-C5FDBB514FDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerQuest.CoreDataProvider", "BeerQuest.CoreDataProvider\BeerQuest.CoreDataProvider.csproj", "{D167F248-C7FA-47AA-8E0E-29FC6262BA5A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerQuest.CoreDataProvider.UnitTests", "BeerQuest.CoreDataProvider.UnitTests\BeerQuest.CoreDataProvider.UnitTests.csproj", "{AAEADCC4-D018-4CFA-95F4-41D72B10897F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,14 +36,6 @@ Global
 		{ED1AE171-9409-4A1A-90D5-93906D8245F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED1AE171-9409-4A1A-90D5-93906D8245F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED1AE171-9409-4A1A-90D5-93906D8245F6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CF4DC2E0-C8BF-43DC-9789-B8BBF536F5F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CF4DC2E0-C8BF-43DC-9789-B8BBF536F5F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CF4DC2E0-C8BF-43DC-9789-B8BBF536F5F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CF4DC2E0-C8BF-43DC-9789-B8BBF536F5F0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3959E311-9B4D-45B0-A85A-73EF8334AC27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3959E311-9B4D-45B0-A85A-73EF8334AC27}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3959E311-9B4D-45B0-A85A-73EF8334AC27}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3959E311-9B4D-45B0-A85A-73EF8334AC27}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D66B6036-C95E-4B5C-BB1F-0162B94024B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D66B6036-C95E-4B5C-BB1F-0162B94024B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D66B6036-C95E-4B5C-BB1F-0162B94024B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -56,6 +48,14 @@ Global
 		{E344E9B9-A7C3-4942-AB0C-C5FDBB514FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E344E9B9-A7C3-4942-AB0C-C5FDBB514FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E344E9B9-A7C3-4942-AB0C-C5FDBB514FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D167F248-C7FA-47AA-8E0E-29FC6262BA5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D167F248-C7FA-47AA-8E0E-29FC6262BA5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D167F248-C7FA-47AA-8E0E-29FC6262BA5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D167F248-C7FA-47AA-8E0E-29FC6262BA5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAEADCC4-D018-4CFA-95F4-41D72B10897F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAEADCC4-D018-4CFA-95F4-41D72B10897F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAEADCC4-D018-4CFA-95F4-41D72B10897F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAEADCC4-D018-4CFA-95F4-41D72B10897F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

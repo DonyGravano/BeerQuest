@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BeerQuest.CoreDataProvider\BeerQuest.CoreDataProvider.csproj" />
+    <ProjectReference Include="..\BeerQuest.Models\BeerQuest.Models.csproj" />
+  </ItemGroup>
+
 </Project>
