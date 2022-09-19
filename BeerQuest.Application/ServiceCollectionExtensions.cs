@@ -12,7 +12,7 @@ namespace BeerQuest.Application
     {
         public static void AddApplicationServices(this IServiceCollection serviceCollection)
         {
-            serviceCollection.AddTransient<IPubReviewService, PubReviewService>();
+            serviceCollection.AddTransient<IVenueReviewService, VenueReviewService>();
         }
     }
 }

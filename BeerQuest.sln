@@ -22,6 +22,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerQuest.CoreDataProvider"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerQuest.CoreDataProvider.UnitTests", "BeerQuest.CoreDataProvider.UnitTests\BeerQuest.CoreDataProvider.UnitTests.csproj", "{AAEADCC4-D018-4CFA-95F4-41D72B10897F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerQuest.Models.UnitTests", "BeerQuest.Models.UnitTests\BeerQuest.Models.UnitTests.csproj", "{9BE4CA6E-A19C-4E43-98DD-2BCADC6936F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{AAEADCC4-D018-4CFA-95F4-41D72B10897F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAEADCC4-D018-4CFA-95F4-41D72B10897F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAEADCC4-D018-4CFA-95F4-41D72B10897F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BE4CA6E-A19C-4E43-98DD-2BCADC6936F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BE4CA6E-A19C-4E43-98DD-2BCADC6936F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BE4CA6E-A19C-4E43-98DD-2BCADC6936F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BE4CA6E-A19C-4E43-98DD-2BCADC6936F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,7 +2,7 @@
 
 namespace BeerQuest.Models;
 
-public class PubReview
+public class VenueReview
 {
     public string Name { get; set; }
     public string Category { get; set; }

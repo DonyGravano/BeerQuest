@@ -17,6 +17,6 @@ public static class ServiceCollectionExtensions
             return new SqliteConnection(connectionStringConfig.ConnectionString);
         });
         serviceCollection.AddTransient<IQueryExecutor, QueryExecutor>();
-        serviceCollection.AddTransient<IPubReviewRepository, SqlLitePubReviewRepository>();
+        serviceCollection.AddTransient<IVenueReviewRepository, SqlLiteVenueReviewRepository>();
     }
 }

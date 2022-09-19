@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <None Update="leedsbeerquest.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="leedsbeerquest2.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
