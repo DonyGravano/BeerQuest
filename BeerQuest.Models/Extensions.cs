@@ -1,54 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Dynamic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace BeerQuest.Models;
 
-namespace BeerQuest.Models
+public static class Extensions
 {
-    public static class Extensions
+    public static string ToDbColumn(this RatingType ratingType)
     {
-        public static string ToDbColumn(this RatingType ratingType)
+        switch (ratingType)
         {
-            switch (ratingType)
-            {
-                case RatingType.Null:
-                    break;
-                case RatingType.Beer:
-                    return "stars_beer";
-                case RatingType.Atmosphere:
-                    return "stars_atmosphere";
-                case RatingType.Amenities:
-                    return "stars_amenities";
-                case RatingType.Value:
-                    return "stars_value";
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(ratingType), ratingType, null);
-            }
-
-            return string.Empty;
+            case RatingType.Null:
+                break;
+            case RatingType.Beer:
+                return "stars_beer";
+            case RatingType.Atmosphere:
+                return "stars_atmosphere";
+            case RatingType.Amenities:
+                return "stars_amenities";
+            case RatingType.Value:
+                return "stars_value";
+            default:
+                throw new ArgumentOutOfRangeException(nameof(ratingType), ratingType, null);
         }
 
-        public static string ToOperatorString(this ComparisonOperator ratingType)
+        return string.Empty;
+    }
+
+    public static string ToOperatorString(this ComparisonOperator ratingType)
+    {
+        switch (ratingType)
         {
-            switch (ratingType)
-            {
-                case ComparisonOperator.NotEqual:
-                    return "<>";
-                case ComparisonOperator.Equal:
-                    return "=";
-                case ComparisonOperator.GreaterThan:
-                    return ">";
-                case ComparisonOperator.GreaterThanOrEqualTo:
-                    return ">=";
-                case ComparisonOperator.LessThan:
-                    return "<";
-                case ComparisonOperator.LessThanOrEqualTo:
-                    return "<=";
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(ratingType), ratingType, null);
-            }
+            case ComparisonOperator.NotEqual:
+                return "<>";
+            case ComparisonOperator.Equal:
+                return "=";
+            case ComparisonOperator.GreaterThan:
+                return ">";
+            case ComparisonOperator.GreaterThanOrEqualTo:
+                return ">=";
+            case ComparisonOperator.LessThan:
+                return "<";
+            case ComparisonOperator.LessThanOrEqualTo:
+                return "<=";
+            default:
+                throw new ArgumentOutOfRangeException(nameof(ratingType), ratingType, null);
         }
     }
 }

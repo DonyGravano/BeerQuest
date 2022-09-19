@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using AutoFixture;
 using AutoFixture.AutoMoq;
@@ -12,61 +9,64 @@ using BeerQuest.Models;
 using Moq;
 using NUnit.Framework;
 
-namespace BeerQuest.Application.UnitTests
+namespace BeerQuest.Application.UnitTests;
+
+[TestFixture]
+public class VenueReviewServiceTests
 {
-    [TestFixture]
-    public class VenueReviewServiceTests
+    [SetUp]
+    public void SetUp()
     {
-        [SetUp]
-        public void SetUp()
-        {
-            _mockDataRepository = new Mock<IVenueReviewRepository>();
-        }
+        _mockDataRepository = new Mock<IVenueReviewRepository>();
+    }
 
-        private Mock<IVenueReviewRepository> _mockDataRepository;
+    private Mock<IVenueReviewRepository> _mockDataRepository;
 
-        private VenueReviewService Sut => new(_mockDataRepository.Object);
+    private VenueReviewService Sut => new(_mockDataRepository.Object);
 
-        [Test]
-        public void Ctor_NullArgument_ThrowsNullArgumentException()
-        {
-            var fixture = new Fixture();
-            var assertion = new GuardClauseAssertion(fixture.Customize(new AutoMoqCustomization()));
-            assertion.Verify(typeof(VenueReviewService).GetConstructors());
-        }
-        [Test]
-        public async Task GetAllPubReviewsAsync_CallsApplicationService_WithParams()
-        {
-            await Sut.GetAllVenueReviewsAsync();
+    [Test]
+    public void Ctor_NullArgument_ThrowsNullArgumentException()
+    {
+        var fixture = new Fixture();
+        var assertion = new GuardClauseAssertion(fixture.Customize(new AutoMoqCustomization()));
+        assertion.Verify(typeof(VenueReviewService).GetConstructors());
+    }
 
-            _mockDataRepository.Verify(prs => prs.GetAllVenueReviewsAsync(), Times.Once);
-        }
+    [Test]
+    public async Task GetAllPubReviewsAsync_CallsApplicationService_WithParams()
+    {
+        await Sut.GetAllVenueReviewsAsync();
 
-        [Test]
-        [AutoData]
-        public async Task GetVenueReviewsByTags_CallsApplicationService_WithParams(string[] tags)
-        {
-            await Sut.GetVenueReviewsByTagsAsync(tags);
+        _mockDataRepository.Verify(prs => prs.GetAllVenueReviewsAsync(), Times.Once);
+    }
 
-            _mockDataRepository.Verify(prs => prs.GetVenueReviewsByTagsAsync(tags), Times.Once);
-        }
+    [Test]
+    [AutoData]
+    public async Task GetVenueReviewsByTags_CallsApplicationService_WithParams(string[] tags)
+    {
+        await Sut.GetVenueReviewsByTagsAsync(tags);
 
-        [Test]
-        [AutoData]
-        public async Task GetVenueReviewsFromCertainDate_CallsApplicationService_WithParams(DateTime dateTime, ComparisonOperator comparisonOperator)
-        {
-            await Sut.GetVenueReviewsWithDateTimeAsync(dateTime, comparisonOperator);
+        _mockDataRepository.Verify(prs => prs.GetVenueReviewsByTagsAsync(tags), Times.Once);
+    }
 
-            _mockDataRepository.Verify(prs => prs.GetVenueReviewsDateTimeAsync(dateTime, comparisonOperator), Times.Once);
-        }
+    [Test]
+    [AutoData]
+    public async Task GetVenueReviewsFromCertainDate_CallsApplicationService_WithParams(DateTime dateTime,
+        ComparisonOperator comparisonOperator)
+    {
+        await Sut.GetVenueReviewsWithDateTimeAsync(dateTime, comparisonOperator);
 
-        [Test]
-        [AutoData]
-        public async Task GetVenueReviewsByRating_CallsApplicationService_WithParams(RatingType ratingType, double rating, ComparisonOperator comparisonOperator)
-        {
-            await Sut.GetVenueReviewsByRatingAsync(ratingType, rating, comparisonOperator);
+        _mockDataRepository.Verify(prs => prs.GetVenueReviewsDateTimeAsync(dateTime, comparisonOperator), Times.Once);
+    }
 
-            _mockDataRepository.Verify(prs => prs.GetVenueReviewsByRatingAsync(ratingType, rating, comparisonOperator), Times.Once);
-        }
+    [Test]
+    [AutoData]
+    public async Task GetVenueReviewsByRating_CallsApplicationService_WithParams(RatingType ratingType, double rating,
+        ComparisonOperator comparisonOperator)
+    {
+        await Sut.GetVenueReviewsByRatingAsync(ratingType, rating, comparisonOperator);
+
+        _mockDataRepository.Verify(prs => prs.GetVenueReviewsByRatingAsync(ratingType, rating, comparisonOperator),
+            Times.Once);
     }
 }

@@ -10,7 +10,8 @@ public class VenueReviewService : IVenueReviewService
 
     public VenueReviewService(IVenueReviewRepository venueReviewRepository)
     {
-        _venueReviewRepository = venueReviewRepository ?? throw new ArgumentNullException(nameof(venueReviewRepository));
+        _venueReviewRepository =
+            venueReviewRepository ?? throw new ArgumentNullException(nameof(venueReviewRepository));
     }
 
     public async Task<IReadOnlyList<VenueReview>> GetAllVenueReviewsAsync()
@@ -23,12 +24,14 @@ public class VenueReviewService : IVenueReviewService
         return await _venueReviewRepository.GetVenueReviewsByTagsAsync(tags);
     }
 
-    public async Task<IReadOnlyList<VenueReview>> GetVenueReviewsWithDateTimeAsync(DateTime dateTime, ComparisonOperator comparisonOperator)
+    public async Task<IReadOnlyList<VenueReview>> GetVenueReviewsWithDateTimeAsync(DateTime dateTime,
+        ComparisonOperator comparisonOperator)
     {
         return await _venueReviewRepository.GetVenueReviewsDateTimeAsync(dateTime, comparisonOperator);
     }
 
-    public async Task<IReadOnlyList<VenueReview>> GetVenueReviewsByRatingAsync(RatingType ratingType, double rating, ComparisonOperator comparisonOperator)
+    public async Task<IReadOnlyList<VenueReview>> GetVenueReviewsByRatingAsync(RatingType ratingType, double rating,
+        ComparisonOperator comparisonOperator)
     {
         return await _venueReviewRepository.GetVenueReviewsByRatingAsync(ratingType, rating, comparisonOperator);
     }

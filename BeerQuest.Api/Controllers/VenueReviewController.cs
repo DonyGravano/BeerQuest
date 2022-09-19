@@ -21,7 +21,7 @@ public class VenueReviewController : Controller
     {
         return Ok(await _reviewService.GetAllVenueReviewsAsync());
     }
-    
+
     [HttpGet]
     [Route("tags")]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -33,7 +33,8 @@ public class VenueReviewController : Controller
     [HttpGet]
     [Route("{dateTime:datetime}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<ActionResult> GetVenueReviewsWithDateTimeAsync([FromRoute] DateTime dateTime, [FromQuery] ComparisonOperator comparisonOperator)
+    public async Task<ActionResult> GetVenueReviewsWithDateTimeAsync([FromRoute] DateTime dateTime,
+        [FromQuery] ComparisonOperator comparisonOperator)
     {
         return Ok(await _reviewService.GetVenueReviewsWithDateTimeAsync(dateTime, comparisonOperator));
     }
@@ -41,7 +42,8 @@ public class VenueReviewController : Controller
     [HttpGet]
     [Route("{ratingType}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<ActionResult> GetVenueReviewsByRating([FromRoute] RatingType ratingType, [FromQuery] double rating, [FromQuery] ComparisonOperator comparisonOperator)
+    public async Task<ActionResult> GetVenueReviewsByRating([FromRoute] RatingType ratingType,
+        [FromQuery] double rating, [FromQuery] ComparisonOperator comparisonOperator)
     {
         return Ok(await _reviewService.GetVenueReviewsByRatingAsync(ratingType, rating, comparisonOperator));
     }
